@@ -410,6 +410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1044166667}
+  - component: {fileID: 1044166668}
   m_Layer: 0
   m_Name: LookRoot
   m_TagString: Untagged
@@ -434,6 +435,28 @@ Transform:
   m_Father: {fileID: 1379646952}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1044166668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044166666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fdd9677af09f3946aa2b1821f634edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRoot: {fileID: 1379646952}
+  lookRoot: {fileID: 1044166667}
+  invert: 0
+  bisa_unlock: 1
+  sensitivity: 5
+  step_lembut: 10
+  weight_lembut: 0.4
+  sudut_roll: 0
+  rollSpeed: 3
+  look_limit_bawaan: {x: -70, y: 80}
 --- !u!1 &1379646951
 GameObject:
   m_ObjectHideFlags: 0
