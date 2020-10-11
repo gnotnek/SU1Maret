@@ -83,9 +83,9 @@ public class mouseLook : MonoBehaviour
 
         look_angles.x = Mathf.Clamp(look_angles.x, look_limit_bawaan.x, look_limit_bawaan.y);
 
-        roll_angle_saatIni = 
-            Mathf.Lerp(roll_angle_saatIni, Input.GetAxisRaw(mouseAxis.MOUSE_X)
-            * sudut_roll, Time.deltaTime * rollSpeed);
+        // roll_angle_saatIni = 
+        //     Mathf.Lerp(roll_angle_saatIni, Input.GetAxisRaw(mouseAxis.MOUSE_X)
+        //     * sudut_roll, Time.deltaTime * rollSpeed); iki skrip marakke mabuk
 
         lookRoot.localRotation = Quaternion.Euler(look_angles.x, 0f, roll_angle_saatIni);
         playerRoot.localRotation = Quaternion.Euler(0f, look_angles.y, 0f);
