@@ -6,7 +6,7 @@ public class SprintdanCrouch : MonoBehaviour {
     // Start is called before the first frame update
      private PlayerMovement playerMovement;
     public float kecepatan_lari = 10f;
-    public float kecepatan_bergerak = 5f;
+    public float kecepatan_jalan = 5f;
     public float merayap = 2f;
 
     private Transform look_Root;
@@ -39,8 +39,7 @@ public class SprintdanCrouch : MonoBehaviour {
         player_footsteps.step_Distance = walk_step_distance;
     }
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
      sprint(); 
      merangkak();  
     }
@@ -57,7 +56,7 @@ public class SprintdanCrouch : MonoBehaviour {
         }
 
         if(Input.GetKeyUp(KeyCode.LeftShift) && !sedang_merangkak){
-            playerMovement.speed = kecepatan_bergerak;
+            playerMovement.speed = kecepatan_jalan;
 
             player_footsteps.volume_Min = walk_vol_min;
             player_footsteps.volume_Max = walk_vol_max;
@@ -71,7 +70,7 @@ public class SprintdanCrouch : MonoBehaviour {
             if(sedang_merangkak){
                 //sedang berdiri
                 look_Root.localPosition = new Vector3(0f, tinggi_berdiri, 0f);
-                playerMovement.speed = kecepatan_bergerak;
+                playerMovement.speed = kecepatan_jalan;
 
                 player_footsteps.volume_Min = walk_vol_min;
                 player_footsteps.volume_Max = walk_vol_max;
