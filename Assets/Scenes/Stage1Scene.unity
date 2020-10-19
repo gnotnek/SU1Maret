@@ -420,6 +420,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36acd7d3e2db08f4297062287bae8c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon_aim: 2
+  muzzFlash: {fileID: 0}
+  shootSound: {fileID: 709224520}
+  reloadSound: {fileID: 0}
+  fireType: 0
+  bulletType: 0
+  attack_point: {fileID: 0}
 --- !u!82 &709224520
 AudioSource:
   m_ObjectHideFlags: 0
@@ -591,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 2bd6bf150a6e08645964bd2baf2a789b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 2bd6bf150a6e08645964bd2baf2a789b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -669,6 +676,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36acd7d3e2db08f4297062287bae8c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon_aim: 1
+  muzzFlash: {fileID: 0}
+  shootSound: {fileID: 1231208802}
+  reloadSound: {fileID: 0}
+  fireType: 0
+  bulletType: 1
+  attack_point: {fileID: 0}
 --- !u!82 &1231208802
 AudioSource:
   m_ObjectHideFlags: 0
@@ -927,6 +941,7 @@ GameObject:
   - component: {fileID: 1379646954}
   - component: {fileID: 1379646955}
   - component: {fileID: 1379646956}
+  - component: {fileID: 1379646958}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1113,6 +1128,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1379646958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379646951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe155985691971a47a5e562406f1ffef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1231208801}
+  - {fileID: 709224519}
 --- !u!1001 &1439907732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1182,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100026, guid: f01a880f7473c2546b3ff80815537299, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: f01a880f7473c2546b3ff80815537299, type: 3}
       propertyPath: m_Layer
