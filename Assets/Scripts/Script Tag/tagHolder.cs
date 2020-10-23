@@ -16,8 +16,10 @@ public class tags{
     public const string Look_Root= "Look Root";
     public const string ZOOM_CAMERA= "FP Camera";
     public const string CROSSHAIR= "Crosshair";
-    public const string Player_tag= "Playe";
+    public const string Player_tag= "Player";
     public const string Enemy_tag= "Enemy";
+
+    public const string AXE_tag = "Axe";
 }
 
 public class animationTag{

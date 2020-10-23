@@ -1,0 +1,60 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerAttack : MonoBehaviour{
+
+    private WeaponManager weapon_manager;
+
+    public float fireRate = 15f;
+    private float nextTimetoFire;
+    public float damage = 20f;
+
+    private void Awake() {
+        weapon_manager = GetComponent<WeaponManager>();
+    }
+    // Start is called before the first frame update
+    void Start(){
+        weaponShoot();
+    }
+
+    // Update is called once per frame
+    void Update(){
+        
+    }
+
+    void weaponShoot(){
+
+        //assault
+        if(weapon_manager.GetCurrentSelectedWeapon().fireType == WeaponFireType.MULTIPLE){            
+            //nek dipanjer klik kiri ne di execute
+            if(Input.GetMouseButton(0) && Time.time > nextTimetoFire){
+                nextTimetoFire = Time.time + 1f / fireRate;
+
+                weapon_manager.GetCurrentSelectedWeapon().shootAnimation();
+
+                //BulletFire();
+            }
+        }
+        //regullar ora dipanjer
+        else{
+            if(Input.GetMouseButtonDown(0)){
+                //revolver
+                if(weapon_manager.GetCurrentSelectedWeapon().bulletType == WeaoponBulletType.BULLET){
+                    weapon_manager.GetCurrentSelectedWeapon().shootAnimation();
+
+                } else {
+                    //spear/tombak
+
+
+                }
+            }
+
+        }
+    }
+
+
+
+
+
+}

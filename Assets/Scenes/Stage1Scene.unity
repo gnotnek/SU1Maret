@@ -258,6 +258,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ff743d8f491d8c24bafd6c549f139cac, type: 2}
+    - target: {fileID: 9500000, guid: 48d42201fa1ddd74b8df820204882ede, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 48d42201fa1ddd74b8df820204882ede, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1143,6 +1147,7 @@ GameObject:
   - component: {fileID: 1379646955}
   - component: {fileID: 1379646956}
   - component: {fileID: 1379646958}
+  - component: {fileID: 1379646959}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1342,9 +1347,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 1231208801}
-  - {fileID: 709224519}
   - {fileID: 259051812}
+  - {fileID: 709224519}
+  - {fileID: 1231208801}
+--- !u!114 &1379646959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379646951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620072c18f87dcb41a9ef092cb52e907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 15
+  damage: 20
 --- !u!1001 &1439907732
 PrefabInstance:
   m_ObjectHideFlags: 0
