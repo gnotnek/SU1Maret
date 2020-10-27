@@ -10,17 +10,17 @@ public class PlayerAttack : MonoBehaviour{
     private float nextTimetoFire;
     public float damage = 20f;
 
-    private void Awake() {
+    void Awake() {
         weapon_manager = GetComponent<WeaponManager>();
     }
     // Start is called before the first frame update
     void Start(){
-        weaponShoot();
+       
     }
 
     // Update is called once per frame
     void Update(){
-        
+        weaponShoot();   
     }
 
     void weaponShoot(){
@@ -42,9 +42,11 @@ public class PlayerAttack : MonoBehaviour{
                 //revolver
                 if(weapon_manager.GetCurrentSelectedWeapon().bulletType == WeaoponBulletType.BULLET){
                     weapon_manager.GetCurrentSelectedWeapon().shootAnimation();
-
+                    //BulletaFire();
                 } else {
                     //spear/tombak
+
+                    
 
 
                 }
