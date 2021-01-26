@@ -10,10 +10,22 @@ public class PlayerAttack : MonoBehaviour{
     private float nextTimetoFire;
     public float damage = 20f;
 
+    //private Animator zoomCamAim;
+    private bool zoomed;
+    private Camera mainCam;
+    private GameObject chrosshair;
+
+    [SerializeField]
+    private GameObject spear_preafab;
+    [SerializeField]
+    private Transform spear_StartPosition;
+    
     void Awake() {
         weapon_manager = GetComponent<WeaponManager>();
+
     }
-    // Start is called before the first frame update
+    
+
     void Start(){
        
     }
@@ -45,7 +57,10 @@ public class PlayerAttack : MonoBehaviour{
                     //BulletaFire();
                 } else {
                     //spear/tombak
-
+                    weapon_manager.GetCurrentSelectedWeapon().shootAnimation();
+                    if(weapon_manager.GetCurrentSelectedWeapon().bulletType==WeaoponBulletType.SPEAR){
+                        ThrowSpear(true);
+                    }
                     
 
 
@@ -53,6 +68,15 @@ public class PlayerAttack : MonoBehaviour{
             }
 
         }
+
+        void ThrowSpear(bool throwspear){
+            if(throwspear){
+                GameObject spear = Instantiate(spear_preafab);
+                spear.transform.position = spear_StartPosition.position;
+                spear.GetComponent<SpearScript>().launch(mainCam);
+            }
+        }
+
     }
 
 
