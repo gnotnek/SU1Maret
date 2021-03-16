@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour{
     private GameObject chrosshair;
 
     [SerializeField]
-    private GameObject spear_preafab;
+    private GameObject spear_prefab;
     [SerializeField]
     private Transform spear_StartPosition;
     
@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour{
 
                 weapon_manager.GetCurrentSelectedWeapon().shootAnimation();
 
-                //BulletFire();
+                BulletFire();
             }
         }
         //regullar ora dipanjer
@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour{
                 //revolver
                 if(weapon_manager.GetCurrentSelectedWeapon().bulletType == WeaoponBulletType.BULLET){
                     weapon_manager.GetCurrentSelectedWeapon().shootAnimation();
-                    //BulletaFire();
+                    BulletFire();
                 } else {
                     //spear/tombak
                     weapon_manager.GetCurrentSelectedWeapon().shootAnimation();
@@ -71,11 +71,18 @@ public class PlayerAttack : MonoBehaviour{
 
         void ThrowSpear(bool throwspear){
             if(throwspear){
-                GameObject spear = Instantiate(spear_preafab);
+                GameObject spear = Instantiate(spear_prefab);
                 spear.transform.position = spear_StartPosition.position;
                 spear.GetComponent<SpearScript>().launch(mainCam);
             }
         }
+
+        void BulletFire(){
+            RaycastHit hit;
+            if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit)){
+                print("We hit: " + hit.transform.gameObject.name);
+            }
+        } // bullet fired
 
     }
 

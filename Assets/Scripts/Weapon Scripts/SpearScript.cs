@@ -6,7 +6,7 @@ public class SpearScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody mybody;
-    public float speed = 30f;
+    public float speed = 15f;
     public float deactive_timer = 3f;
     public float damage = 15f;
     private void Awake() {
@@ -26,7 +26,7 @@ public class SpearScript : MonoBehaviour
     void deactivatedGameObjek(){
         if(gameObject.activeInHierarchy){
             gameObject.SetActive(false);
-        }
+            }
     }
 
     public void launch(Camera mainCamera){
@@ -39,4 +39,5 @@ public class SpearScript : MonoBehaviour
         //after kena enemy deactivate game objek
 
     }
+
 }
